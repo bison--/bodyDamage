@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'bodyDamage.ui'
 #
-# Created: Wed May  8 19:42:25 2013
+# Created: Wed May  8 20:08:56 2013
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -192,7 +192,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        MainWindow.setTabOrder(self.nutHead, self.nutRhand)
+        MainWindow.setTabOrder(self.nutHead, self.nutRarm)
+        MainWindow.setTabOrder(self.nutRarm, self.nutLarm)
+        MainWindow.setTabOrder(self.nutLarm, self.nutRhand)
         MainWindow.setTabOrder(self.nutRhand, self.nutLhand)
         MainWindow.setTabOrder(self.nutLhand, self.nutUbody)
         MainWindow.setTabOrder(self.nutUbody, self.nutLbody)

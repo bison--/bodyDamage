@@ -538,6 +538,8 @@
  </widget>
  <tabstops>
   <tabstop>nutHead</tabstop>
+  <tabstop>nutRarm</tabstop>
+  <tabstop>nutLarm</tabstop>
   <tabstop>nutRhand</tabstop>
   <tabstop>nutLhand</tabstop>
   <tabstop>nutUbody</tabstop>
