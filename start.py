@@ -74,30 +74,29 @@ class signalHandler(object):
 					restHp += 50
 				else:
 					additionalMessages.append("NO MORE ADVENTURES 4 YOU")
-		
-		self._ui.__dict__['pgbHP'].setMaximum(totalHp)
-		
-		if dead or restHp <= 0:
-			additionalMessages.append("DEAD")
-			self._ui.__dict__['pgbHP'].setValue(0)
-		else:
-			self._ui.__dict__['pgbHP'].setValue(restHp)
-			additionalMessages.append("{0}/{1} hp".format(restHp, totalHp))
-		
-		
-		finalText = ""
-		if damageResult:
-			finalText += "\n".join(damageResult)
-		
-		if finalText != "" and additionalMessages:
-			finalText += "\n"
-			
-		if additionalMessages:
-			finalText += "\n".join(additionalMessages)
-		
+
 		if lostSubBodyPart:
 			self.recalc()
 		else:
+			self._ui.__dict__['pgbHP'].setMaximum(totalHp)
+		
+			if dead or restHp <= 0:
+				additionalMessages.append("DEAD")
+				self._ui.__dict__['pgbHP'].setValue(0)
+			else:
+				self._ui.__dict__['pgbHP'].setValue(restHp)
+				additionalMessages.append("{0}/{1} hp".format(restHp, totalHp))
+		
+			finalText = ""
+			if damageResult:
+				finalText += "\n".join(damageResult)
+		
+			if finalText != "" and additionalMessages:
+				finalText += "\n"
+			
+			if additionalMessages:
+				finalText += "\n".join(additionalMessages)
+
 			self._ui.__dict__['txtReport'].setPlainText(finalText)
 		
 		
