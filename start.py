@@ -45,11 +45,11 @@ class signalHandler(object):
 				#print dir(self._ui.__dict__[itm])
 				#print self._ui.__dict__[itm].value()
 				tmpValue = self._ui.__dict__[itm].value()
-				
-				totalHp += 100
+				tmpMax = self._ui.__dict__[itm].maximum()
+				totalHp += tmpMax
 				restHp += tmpValue
 				
-				if tmpValue < 100 and tmpValue > 0:
+				if tmpValue < tmpMax and tmpValue > 0:
 					damageResult.append(itm.replace("nut", "") + ": {0:d} %".format(tmpValue) )
 				elif tmpValue == 0:
 					damageResult.append("You lost: " + itm.replace("nut", ""))
