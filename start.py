@@ -23,8 +23,8 @@ class signalHandler(object):
 		self.connectedBodyParts = { 'Lbody':('Rleg','Lleg'), 'Rleg':('Rfeet',), 'Lleg':('Lfeet',), 'Rarm':('Rhand',), 'Larm':('Lhand',) }
 		
 	def connect(self):
-		# conenct here
-		print 'connect'
+		# connect dynamically the UI elements to our recalc function
+		#print 'connect'
 		for itm in dir(self._ui):
 			#print itm
 			if 'nut' in itm:
@@ -78,13 +78,13 @@ class signalHandler(object):
 		if lostSubBodyPart:
 			self.recalc()
 		else:
-			self._ui.__dict__['pgbHP'].setMaximum(totalHp)
+			self._ui.pgbHP.setMaximum(totalHp)
 		
 			if dead or restHp <= 0:
 				additionalMessages.append("DEAD")
-				self._ui.__dict__['pgbHP'].setValue(0)
+				self._ui.pgbHP.setValue(0)
 			else:
-				self._ui.__dict__['pgbHP'].setValue(restHp)
+				self._ui.pgbHP.setValue(restHp)
 				additionalMessages.append("{0}/{1} hp".format(restHp, totalHp))
 		
 			finalText = ""
@@ -97,7 +97,7 @@ class signalHandler(object):
 			if additionalMessages:
 				finalText += "\n".join(additionalMessages)
 
-			self._ui.__dict__['txtReport'].setPlainText(finalText)
+			self._ui.txtReport.setPlainText(finalText)
 		
 		
 	def on_nutRhand_valueChanged(self, val):
