@@ -27,9 +27,9 @@ class signalHandler(object):
 		#print 'connect'
 		for itm in dir(self._ui):
 			#print itm
-			if 'nut' in itm:
+			if itm.startswith('nut'):
 				QtCore.QObject.connect(self._ui.__dict__[itm], QtCore.SIGNAL("valueChanged(int)"), self.recalc)
-			elif 'chk' in itm:
+			elif itm.startswith('chk'):
 				QtCore.QObject.connect(self._ui.__dict__[itm], QtCore.SIGNAL("stateChanged(int)"), self.recalc)
 
 	def recalc(self):
