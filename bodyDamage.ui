@@ -495,6 +495,19 @@
      <number>100</number>
     </property>
    </widget>
+   <widget class="QPushButton" name="cmdHeal">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>10</y>
+      <width>95</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>HEAL</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>txtReport</zorder>
    <zorder>chkArrow</zorder>
@@ -523,6 +536,7 @@
    <zorder>line_13</zorder>
    <zorder>nutRarm</zorder>
    <zorder>nutLarm</zorder>
+   <zorder>cmdHeal</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -530,7 +544,7 @@
      <x>0</x>
      <y>0</y>
      <width>670</width>
-     <height>25</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>

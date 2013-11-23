@@ -31,6 +31,18 @@ class signalHandler(object):
 				QtCore.QObject.connect(self._ui.__dict__[itm], QtCore.SIGNAL("valueChanged(int)"), self.recalc)
 			elif itm.startswith('chk'):
 				QtCore.QObject.connect(self._ui.__dict__[itm], QtCore.SIGNAL("stateChanged(int)"), self.recalc)
+			elif itm == 'cmdHeal':
+				QtCore.QObject.connect(self._ui.__dict__[itm], QtCore.SIGNAL("clicked()"), self.heal)
+	
+	def heal(self):
+		for itm in dir(self._ui):
+			if itm.startswith('nut'):
+				self._ui.__dict__[itm].setValue(self._ui.__dict__[itm].maximum())
+			elif itm.startswith('chk'):
+				self._ui.__dict__[itm].checked = False
+			
+		self._ui.txtReport.setPlainText("")
+		self.recalc()
 
 	def recalc(self):
 		lostSubBodyPart = False

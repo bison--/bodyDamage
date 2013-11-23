@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'bodyDamage.ui'
 #
-# Created: Wed May  8 20:08:56 2013
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Sat Nov 23 02:04:46 2013
+#      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -181,9 +181,12 @@ class Ui_MainWindow(object):
         self.nutLarm.setSingleStep(5)
         self.nutLarm.setProperty("value", 100)
         self.nutLarm.setObjectName(_fromUtf8("nutLarm"))
+        self.cmdHeal = QtGui.QPushButton(self.centralwidget)
+        self.cmdHeal.setGeometry(QtCore.QRect(550, 10, 95, 21))
+        self.cmdHeal.setObjectName(_fromUtf8("cmdHeal"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 670, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 670, 29))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -208,6 +211,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Body Damage Calculator", None, QtGui.QApplication.UnicodeUTF8))
         self.chkArrow.setText(QtGui.QApplication.translate("MainWindow", "Took an Arrow in the Knee", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmdHeal.setText(QtGui.QApplication.translate("MainWindow", "HEAL", None, QtGui.QApplication.UnicodeUTF8))
 
 
 if __name__ == "__main__":
